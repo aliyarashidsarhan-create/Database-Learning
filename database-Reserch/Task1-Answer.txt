@@ -44,3 +44,52 @@ Q1)Flat File Systems vs. Relational Databases:
 
 .More resource-heavy compared to simple files
 ---------------------------------------------------------------------------------------------------
+Q3)Roles in a Database System:
+1. System Analyst
+
+-Understands the needs of the business or users.
+
+-Decides what the system should do.
+
+-Creates requirements and helps design how the database should support the system.
+
+2. Database Designer
+
+-Plans the structure of the database.
+
+-Designs tables, relationships, keys, and rules.
+
+-Ensures the database is efficient, organized, and follows standards.
+
+3. Database Developer
+
+-Builds the actual database based on the design.
+
+-Writes SQL queries, stored procedures, triggers, and views.
+
+-Helps implement features like data validation and automation inside the database.
+
+4. DBA (Database Administrator)
+
+-Manages and maintains the database daily.
+
+-Responsible for backup, security, performance, and solving problems.
+
+-Ensures the database runs smoothly without downtime.
+
+5. Application Developer
+
+-Builds the software or apps that use the database.
+
+-Connects the front-end or back-end application to the database.
+
+-Ensures data flows correctly between the user and the database.
+
+6. BI (Business Intelligence) Developer
+
+-Works with data for reporting and analysis.
+
+-Creates dashboards, reports, and visualizations.
+
+-Helps organizations make decisions using data.
+-------------------------------------------------------------------------------------------------------
