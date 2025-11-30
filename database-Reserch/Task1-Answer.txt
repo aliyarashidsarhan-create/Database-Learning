@@ -93,3 +93,74 @@ Q3)Roles in a Database System:
 
 -Helps organizations make decisions using data.
 -------------------------------------------------------------------------------------------------------
+Q4)Relational vs Non-Relational (e.g., MongoDB, Cassandra): 
+Relational Databases (RDBMS)
+
+Relational databases store data in rows and columns, like spreadsheets. Each table represents one type of data, and the tables connect to each other using relationships (keys).
+
+Key Points:
+
+-Data is structured and organized in fixed formats.
+
+-Uses SQL to query and manage data.
+
+-Ensures strong consistency (data is reliable and accurate).
+
+-Best when data has clear relationships.
+
+Examples:
+
+MySQL, PostgreSQL, Oracle, SQL Server.
+
+When to Use:
+
+-Banking systems
+
+-Hotel booking
+
+-Inventory systems
+
+-Any system needing strict data accuracy
+
+Non-Relational Databases (NoSQL)
+
+Non-relational databases store data in flexible formats such as documents, key-value pairs, wide-column stores, or graphs.
+They do not require fixed tables or strict structure.
+
+Key Points:
+
+-Data is flexible, schema-less, and can change easily.
+
+-Designed for big data, high speed, and scalability.
+
+-Supports many data types: JSON, key-value, columns, graphs.
+
+-Focuses on high performance and availability over strict consistency.
+
+Examples:
+
+-Document databases: MongoDB
+
+-Wide-column stores: Cassandra
+
+-Key-value databases: Redis
+
+-Graph databases: Neo4j
+
+When to Use:
+
+-Social media platforms
+
+-Real-time analytics
+
+-IoT data storage
+
+-Applications with rapidly changing or unstructured data
+
+Simple Difference:
+
+Relational databases = structured, organized, reliable, SQL-based.
+
+Non-relational databases = flexible, scalable, fast, designed for large and unstructured data.
+
+-------------------------------------------------------------------------------------------------
