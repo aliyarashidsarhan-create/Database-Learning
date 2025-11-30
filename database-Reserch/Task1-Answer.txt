@@ -326,3 +326,88 @@ Example:
 
 -Metadata about those images (filename, upload date, user ID) is stored in a cloud database for fast searching and processing.
 -----------------------------------------------------------------------------------------------------
+Q8)Advantages and Disadvantages of using cloud-based databases:
+Advantages:
+
+1-Scalability
+
+-Automatically scale resources up or down based on demand.
+
+-No need for manual hardware upgrades.
+
+2-Cost Efficiency
+
+-Pay-as-you-go model: you pay only for what you use.
+
+-Reduces upfront capital expenditure for servers and storage.
+
+3-High Availability & Reliability
+
+-Cloud providers offer built-in redundancy and replication.
+
+-Many services guarantee 99.9%+ uptime.
+
+4-Managed Services
+
+-Providers handle database setup, patching, backups, and maintenance.
+
+-Reduces the need for in-house database administration expertise.
+
+5-Security
+
+-Includes encryption at rest and in transit.
+
+-Often comes with identity and access management (IAM) controls.
+
+6-Global Access
+
+-Accessible from anywhere with an internet connection.
+
+-Supports distributed teams and applications.
+
+7-Disaster Recovery
+
+-Automated backups and geographically distributed data centers.
+
+-Quick recovery in case of failures.
+
+8-Integration
+
+-Easy integration with other cloud services (analytics, AI, IoT).
+
+Disadvantages:
+
+1-Dependency on Internet
+
+-Requires a stable internet connection.
+
+-Performance may degrade with poor connectivity.
+
+2-Recurring Costs
+
+-Ongoing subscription costs can be higher than on-premises for very large datasets over time.
+
+3-Limited Customization
+
+-Certain low-level configurations may not be available compared to self-hosted databases.
+
+-Some features might be restricted depending on the provider.
+
+4-Vendor Lock-in
+
+-Switching providers can be complex due to proprietary tools and data formats.
+
+5-Latency
+
+-Network latency may affect performance for real-time applications, especially if the cloud data center is far away.
+
+6-Compliance & Data Privacy
+
+-Sensitive data may be subject to regulatory constraints.
+
+-Need to ensure the provider meets local compliance laws (e.g., GDPR, HIPAA).
+
+7-Performance Uncertainty
+
+-Shared cloud resources may sometimes lead to “noisy neighbor” issues affecting performance.
+------------------------------------------------------------------------------------------------------
