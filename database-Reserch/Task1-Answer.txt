@@ -224,47 +224,71 @@ Simple Comparison in Words:
 -Cloud → Data stored in the cloud, scalable, flexible, and managed by cloud providers.
 ----------------------------------------------------------------------------------------------------
 Q6)Use case examples :
-Cloud Storage:
-Cloud storage is a service where files, images, videos, backups, and documents are stored on remote servers and accessed through the internet.
-It works like a big online folder that you can access anytime from anywhere.
+1. Relational Databases (SQL):
 
-Use Case Examples:
+-What it is: Stores data in structured tables with rows and columns. Relationships between tables are defined using keys.
 
--Photo Backup for Mobile Phones:
-Apps like Google Photos store millions of pictures so users don’t lose them.
+-Use Cases:
 
--Company Document Storage:
-Businesses store PDFs, reports, invoices, and project files on Google Drive or OneDrive.
+.Banking systems (accounts, transactions)
 
--Application File Storage:
-Netflix, YouTube, and Instagram store huge media files (videos, thumbnails, images).
+.Inventory management
 
--Website Asset Hosting:
-Websites keep images, CSS, JavaScript files in cloud storage (e.g., Amazon S3).
+.E-commerce websites
 
--Disaster Recovery:
-Organizations keep backup copies of systems in cloud storage to protect against data loss.
+-Examples: MySQL, PostgreSQL, Oracle
 
-Cloud Databases:
-Cloud databases store structured or unstructured data on cloud-based database systems.
-They behave like normal databases but are fully managed, scalable, and accessible over the internet.
+2. Non-Relational Databases (NoSQL):
 
-Use Case Examples:
+-What it is: Stores data in flexible formats like documents, key-value pairs, or graphs instead of strict tables.
 
--E-commerce Product Catalogs:
-Cloud databases store product details, prices, stock levels for sites like Amazon.
+-Use Cases:
 
--Banking & Financial Applications:
-Account information, transactions, statements stored in secure cloud DB systems.
+.Social media platforms (posts, likes, comments)
 
--Mobile Apps (e.g., Uber, Talabat, Instagram):
-User profiles, orders, messages, locations stored in cloud databases like Firebase, DynamoDB, MongoDB Atlas.
+.Big data analytics
 
--Enterprise Applications (ERP & HR systems):
-Employee data, payroll, attendance records managed in cloud SQL or NoSQL databases.
+.Real-time applications like chat apps
 
--Analytics & Big Data:
-Companies collect millions of records (sales, clicks, logs) and analyze them using cloud data warehouses like BigQuery or Snowflake.
+.Examples: MongoDB, Cassandra, Redis
+
+3. Centralized Databases
+
+-What it is: All data is stored in a single location, usually a central server.
+
+-Use Cases:
+
+.Small organizations where data access is controlled and limited
+
+.Simple payroll or HR management systems
+
+-Example: A single office database for employee records
+
+4. Distributed Databases
+
+-What it is: Data is stored across multiple locations, servers, or nodes but appears as a single database to users.
+
+-Use Cases:
+
+.Large global companies needing data replication
+
+.Online services with millions of users, like Netflix or Amazon
+
+-Example: Google Spanner, Apache Cassandra
+
+5. Cloud Databases:
+
+-What it is: Databases hosted on cloud platforms and accessed over the internet. Can be relational or non-relational.
+
+-Use Cases:
+
+.Scalable web apps that need flexible storage
+
+.Backup and disaster recovery
+
+.SaaS applications
+
+-Examples: Amazon RDS, Google Firebase, Microsoft Azure SQL Database
 -------------------------------------------------------------------------------------------------------
 Q7)What is Cloud Storage and how does it relate to databases:
 Cloud Storage:
