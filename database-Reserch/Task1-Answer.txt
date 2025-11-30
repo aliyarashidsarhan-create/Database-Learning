@@ -164,3 +164,62 @@ Relational databases = structured, organized, reliable, SQL-based.
 Non-relational databases = flexible, scalable, fast, designed for large and unstructured data.
 
 -------------------------------------------------------------------------------------------------
+Q5) Centralized vs Distributed vs Cloud Databases :
+Centralized Databases:
+
+A centralized database is stored and managed in one single location (like one server or one data center).
+All users and applications connect to that one place to access the data.
+
+Key Points:
+
+-Data lives in one central system.
+
+-Easy to manage and secure because everything is in one place.
+
+-But if the central server fails, the whole system stops.
+
+-Common in small organizations or older systems.
+
+Distributed Databases:
+
+A distributed database is stored across multiple machines in different locations, but it appears as one combined system to the user.
+
+Key Points:
+
+-Data is spread across several servers.
+
+-Each server may hold a portion of the data or a full copy.
+
+-Faster access because data can be retrieved from the nearest server.
+
+-More reliable—if one server fails, others can still work.
+
+-More complex to manage, sync, and secure.
+
+Cloud Databases:
+
+Cloud databases are stored on cloud platforms (e.g., AWS, Azure, Google Cloud) instead of local servers.
+The cloud provider handles hardware, backups, scalability, and maintenance.
+
+Key Points:
+
+-Fully hosted on cloud infrastructure.
+
+-Auto-scaling: can grow as needed without physical hardware.
+
+-Accessible from anywhere via the internet.
+
+-Pay-as-you-go pricing.
+
+-High availability and built-in redundancy.
+
+-Examples: Amazon RDS, Google Firestore, Azure SQL Database.
+
+Simple Comparison in Words:
+
+-Centralized → All data in one place, simple but risky if that place goes down.
+
+-Distributed → Data spread across multiple locations, faster and more reliable but more complex.
+
+-Cloud → Data stored in the cloud, scalable, flexible, and managed by cloud providers.
+----------------------------------------------------------------------------------------------------
