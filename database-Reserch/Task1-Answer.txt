@@ -266,3 +266,39 @@ Employee data, payroll, attendance records managed in cloud SQL or NoSQL databas
 -Analytics & Big Data:
 Companies collect millions of records (sales, clicks, logs) and analyze them using cloud data warehouses like BigQuery or Snowflake.
 -------------------------------------------------------------------------------------------------------
+Q7)What is Cloud Storage and how does it relate to databases:
+Cloud Storage:
+Cloud storage is a service where data is stored on remote servers accessed over the internet, rather than on local computers or physical drives. Providers like Amazon S3, Google Cloud Storage, and Microsoft Azure store your files and manage infrastructure, scalability, and security.
+
+Key Features:
+
+-Scalability: You can store huge amounts of data without worrying about local storage limits.
+
+-Accessibility: Data can be accessed anytime, anywhere over the internet.
+
+-Durability & Backup: Cloud providers ensure data is safe with redundancy and backups.
+
+-File-based storage: Mostly used for files, media, documents, backups, and logs.
+
+Cloud Storage vs Databases:
+
+While cloud storage is great for raw data and files, databases are structured systems that store data in a way that supports querying, relationships, and transactions.
+
+-Databases: Organize data in tables (relational) or documents/key-value pairs (NoSQL). Examples: MySQL, MongoDB, Amazon DynamoDB.
+
+-Cloud Databases: Databases hosted on the cloud. They combine the advantages of database management with cloud features like scalability and high availability. Examples: Amazon RDS, Google Cloud Firestore, Azure SQL Database.
+
+Relationship:
+
+-Cloud storage is more like a “digital warehouse” for raw data.
+
+-Databases are “organized filing systems” that let you efficiently retrieve, update, and analyze that data.
+
+-Many cloud databases actually use cloud storage in the background to store their data reliably.
+
+Example:
+
+-You might store user-uploaded images in cloud storage.
+
+-Metadata about those images (filename, upload date, user ID) is stored in a cloud database for fast searching and processing.
+-----------------------------------------------------------------------------------------------------
