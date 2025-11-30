@@ -1,0 +1,46 @@
+Q1)Flat File Systems vs. Relational Databases:
+
+1. Structure
+
+-Flat File Systems store data in plain files such as text files, CSV, or spreadsheets. All information is usually kept in a single file or a few separate files, and there is no strict structure.
+
+-Relational Databases store data in multiple tables with rows and columns. These tables have defined structures (schemas) and can be linked together.
+
+2. Data Redundancy
+
+-Flat File Systems often contain repeated information because they do not have a way to connect separate files. The same data may appear in many places.
+
+-Relational Databases minimize redundancy by organizing data into related tables. Common information is stored once and referenced when needed.
+
+3. Relationships
+
+-Flat File Systems do not support relationships between files. If you need relationships, you must manually manage them.
+
+-Relational Databases support relationships using primary and foreign keys. This allows tables to connect logically (e.g., Customer ↔ Orders).
+
+4. Example Usage
+
+-Flat File Systems are used for simple tasks such as logs, configuration files, small lists, or storing simple data like contact lists in a text file.
+
+-Relational Databases are used in complex systems like banking, hotel management, hospital systems, e-commerce, and any application that needs organized, linked, and searchable data.
+
+5. Drawbacks
+
+-Flat File Systems:
+
+.Hard to maintain when data grows large
+
+.High data duplication
+
+.No support for complex queries
+
+.Difficult to ensure data accuracy
+
+-Relational Databases
+
+.Require more setup and expertise
+
+.Need database software (e.g., MySQL, PostgreSQL)
+
+.More resource-heavy compared to simple files
+---------------------------------------------------------------------------------------------------
