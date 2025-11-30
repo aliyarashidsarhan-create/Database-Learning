@@ -223,3 +223,46 @@ Simple Comparison in Words:
 
 -Cloud → Data stored in the cloud, scalable, flexible, and managed by cloud providers.
 ----------------------------------------------------------------------------------------------------
+Q6)Use case examples :
+Cloud Storage:
+Cloud storage is a service where files, images, videos, backups, and documents are stored on remote servers and accessed through the internet.
+It works like a big online folder that you can access anytime from anywhere.
+
+Use Case Examples:
+
+-Photo Backup for Mobile Phones:
+Apps like Google Photos store millions of pictures so users don’t lose them.
+
+-Company Document Storage:
+Businesses store PDFs, reports, invoices, and project files on Google Drive or OneDrive.
+
+-Application File Storage:
+Netflix, YouTube, and Instagram store huge media files (videos, thumbnails, images).
+
+-Website Asset Hosting:
+Websites keep images, CSS, JavaScript files in cloud storage (e.g., Amazon S3).
+
+-Disaster Recovery:
+Organizations keep backup copies of systems in cloud storage to protect against data loss.
+
+Cloud Databases:
+Cloud databases store structured or unstructured data on cloud-based database systems.
+They behave like normal databases but are fully managed, scalable, and accessible over the internet.
+
+Use Case Examples:
+
+-E-commerce Product Catalogs:
+Cloud databases store product details, prices, stock levels for sites like Amazon.
+
+-Banking & Financial Applications:
+Account information, transactions, statements stored in secure cloud DB systems.
+
+-Mobile Apps (e.g., Uber, Talabat, Instagram):
+User profiles, orders, messages, locations stored in cloud databases like Firebase, DynamoDB, MongoDB Atlas.
+
+-Enterprise Applications (ERP & HR systems):
+Employee data, payroll, attendance records managed in cloud SQL or NoSQL databases.
+
+-Analytics & Big Data:
+Companies collect millions of records (sales, clicks, logs) and analyze them using cloud data warehouses like BigQuery or Snowflake.
+-------------------------------------------------------------------------------------------------------
