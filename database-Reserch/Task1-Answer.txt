@@ -411,3 +411,38 @@ Disadvantages:
 
 -Shared cloud resources may sometimes lead to “noisy neighbor” issues affecting performance.
 ------------------------------------------------------------------------------------------------------
+Q9) Database Engines and Languages:
+What is a Database Engine?
+
+A Database Engine is the core software component of a database system that stores, retrieves, and manages data. It handles how data is organized, processed, and secured. Essentially, it’s the “brain” behind the database that executes queries, enforces rules, and ensures data integrity.
+
+Examples of Database Engines:
+
+-SQL Server – Developed by Microsoft, widely used in enterprise environments.
+
+-MySQL – Open-source engine, popular for web applications.
+
+-Oracle Database – A high-end, enterprise-grade engine with advanced features.
+
+-PostgreSQL – Open-source, known for reliability and support for complex queries.
+
+Languages Used by Database Engines:
+
+-T-SQL (Transact-SQL) – Used primarily by Microsoft SQL Server. It extends standard SQL with procedural programming, variables, and error handling.
+
+-PL/SQL (Procedural Language/SQL) – Used by Oracle databases. It combines SQL with procedural programming, allowing complex logic in the database.
+
+-ANSI SQL (Structured Query Language) – A standardized language used for querying and managing relational databases. Most engines support standard SQL commands like SELECT, INSERT, UPDATE, DELETE.
+
+Relationship Between Engine and Language:
+
+Yes, there is a relationship. Each database engine often has its own variant of SQL that adds special features. For example, while all engines understand standard SQL, T-SQL is specific to SQL Server, and PL/SQL is specific to Oracle. These extensions allow more control and functionality but may make code less portable between engines.
+
+Can One Language Work Across Different Engines?
+
+-Standard SQL works across most relational database engines for basic operations.
+
+-Engine-specific languages (T-SQL, PL/SQL) usually cannot run directly on another engine without modification. Developers often need to adapt queries when moving from one engine to another.
+
+-Some modern tools and ORMs (Object-Relational Mappers) try to abstract the engine differences, making it easier to write database-independent code.
+---------------------------------------------------------------------------------------------------------
