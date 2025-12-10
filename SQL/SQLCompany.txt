@@ -1,0 +1,48 @@
+create database CompanyDB
+USE CompanyDB
+
+Create Table Employee(
+Fname nvarchar(20) not null,
+Lname nvarchar(20)not null,
+SSN int primary key identity(1,1),
+BirthDate Date ,
+Gender bit default 0,
+Super_ssn int,
+foreign key (Super_ssn) references Employee(SSN)
+)
+create table Department(
+Dname nvarchar(20)not null,
+Dnum int primary key identity(1,1),
+HiringDate DATE )
+
+create table Dependents(
+DependentID int primary key identity (2,2),
+DName varchar(50),
+Gender varchar(10),
+Birthdate Date,
+DSSN Int,
+Foreign key (DSSN) References Employee(SSN)
+)
+Create table Deplocation (
+Dnum Int,
+locations varchar(100),
+primary key (Dnum , locations),
+foreign key (Dnum) References Department(Dnum)
+)
+create table project(
+PNumber int primary key ,
+PName varchar(50),
+Locations varchar(50),
+City varchar(50),
+PDNum int,
+foreign key (PDNum) references Department(Dnum)
+)
+create table WorkeOn(
+SSN int,
+PNumber int,
+WorkingHours int,
+primary key (SSN,PNumber),
+Foreign key (ssn) references Employee(SSN),
+Foreign key (PNumber) references Project(PNumber)
+)
+
