@@ -1,0 +1,48 @@
+
+Insert into Employee(Fname,Lname,BirthDate,Gender,Super_ssn)
+values ('Ali', 'Al-moqbali','1990-05-10',1,1),
+('Aliya', 'Al-isaii','1997-03-31',0,1),
+('Fahad', 'Al-resi','1991-05-20',1,2),
+('Fatema', 'Al-moqbali','1999-07-10',0,3),
+('Hamed', 'Al-Badi','1998-09-10',1,4);
+
+Insert into Department(Dname ,HiringDate)
+values ('HR','2010-01-01'),
+       ('IT','2012-05-16'),
+	   ('Accounting','2018-09-16'),
+	   ('Collection','2020-03-12'),
+	   ('IT','2020-04-14');
+
+Insert into Dependents(DName,Gender,Birthdate,DSSN)
+values('Mona','Female','2001-03-1',1),
+       ('Ali','male','2002-02-1',2),
+	   ('Moza','Female','2003-11-12',3),
+	   ('Mohamed','male','1996-03-1',4),
+	   ('sara','Female','1999-04-1',5);
+
+Insert into Deplocation (Dnum ,locations)
+Values (1,'Sohar'),
+       (2,'Muscat'),
+	   (3,'Sur'),
+	   (4,'Saham'),
+	   (5,'Shinas')
+
+Insert into Project (PNumber ,PName ,Locations,City,PDNum)
+values (100 ,'website ' ,'Sohar','Sohar',1),
+       (101 ,'Airline ' ,'Muscat','Muscat',2),
+	   (102,'bank  ' ,'Sur','Sur',3),
+	   (103 ,'college ' ,'Saham','Saham',4),
+	   (104 ,'student project ' ,'Shinas','Shinas',5)
+
+Insert into WorkeOn (SSN , PNumber ,WorkingHours)
+values (1,100,30),
+       (2,101,20),
+       (3,102,25),
+       (4,103,20),
+       (5,104,30);
+
+
+Alter Table Employee Add  Dnum int Foreign key
+References Department (Dnum)
+
+select * from Employee
