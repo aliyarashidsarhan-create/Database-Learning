@@ -1,5 +1,5 @@
-create database CompanyDB
-USE CompanyDB
+create database TrainingCompany
+use TrainingCompany
 
 Create Table Employee(
 Fname nvarchar(20) not null,
@@ -13,25 +13,28 @@ foreign key (Super_ssn) references Employee(SSN)
 create table Department(
 Dname nvarchar(20)not null,
 Dnum int primary key identity(1,1),
-HiringDate DATE )
+Mgr_ssn int,
+	Mgr_start_date date not null,
+	foreign key (Mgr_ssn) references Employee(Ssn))
 
 create table Dependents(
-DependentID int primary key identity (2,2),
+DependentID int ,
 DName varchar(50),
 Gender varchar(10),
 Birthdate Date,
 DSSN Int,
-Foreign key (DSSN) References Employee(SSN)
+Foreign key (DSSN) References Employee(SSN),
+primary key(DSSN ,DependentID)
 )
 Create table Deplocation (
 Dnum Int,
 locations varchar(100),
-primary key (Dnum , locations),
-foreign key (Dnum) References Department(Dnum)
+foreign key (Dnum) References Department(Dnum),
+primary key (Dnum , locations)
 )
 create table project(
 PNumber int primary key ,
-PName varchar(50),
+PName varchar(50) not null,
 Locations varchar(50),
 City varchar(50),
 PDNum int,
@@ -41,8 +44,10 @@ create table WorkeOn(
 SSN int,
 PNumber int,
 WorkingHours int,
-primary key (SSN,PNumber),
 Foreign key (ssn) references Employee(SSN),
-Foreign key (PNumber) references Project(PNumber)
+Foreign key (PNumber) references Project(PNumber),
+primary key (SSN,PNumber)
 )
+alter table Employee 
+add Dno int foreign key references Department(Dnum)
 
