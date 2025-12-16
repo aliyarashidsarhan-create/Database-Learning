@@ -59,3 +59,20 @@ F_id int Primary key ,Name Varchar(50), MobileNo int ,
 	 Foreign Key (  S_id) References Student( S_Id),
     Foreign Key ( Exam_code) References Exams(Exam_Code),
 	primary key (S_id,Exam_code))
+
+	Alter Table Student Add enrollment_date Date ,
+	Status Varchar(50), GPA Decimal(3 ,1),Advisor varchar(40)-- Add new column in Employee
+
+	Select * From Student
+
+	Update Student Set enrollment_date ='2022-12-15', Status ='Active',
+	GPA =3.1 , Advisor ='M.Ahmed' where S_Id =1 ;
+
+	Update Student Set enrollment_date ='2023-12-15', Status ='Leave',
+	GPA =3.2 , Advisor ='M.Hamed' where S_Id =2 ;
+
+	Update Student Set enrollment_date ='2020-11-15', Status ='Graduate',
+	GPA =3.3 , Advisor ='M.Saif' where S_Id =3;
+
+Update Student Set enrollment_date ='2025-11-15', Status ='Active',
+	GPA =3.5 , Advisor ='M.Aliy' where S_Id =4;  -- to insert into new column 
