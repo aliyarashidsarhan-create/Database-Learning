@@ -1,0 +1,69 @@
+﻿--1. Display the department ID, department name, manager ID, and the full name of the manager. 
+select D.Dnum ,D.Dname ,D.MGRSSN ,E.Fname +' '+E.Lname As fullName  from Departments D
+join  Employee E on   D.MGRSSN =E.SSN
+
+
+--2. Display the names of departments and the names of the projects they control. 
+select D.Dname ,P.Pname from Departments D
+join Project P on D.Dnum =P.Dnum
+
+--3. Display full data of all dependents, along with the full name of the employee they depend on. 
+select Dep .* ,E.Fname+' '+Lname As FullName
+from Dependent Dep
+Join Employee E  on Dep.ESSN =ESSN
+
+--4. Display the project ID, name, and location of all projects located in Cairo or Alex. 
+select Pname ,Pnumber ,Plocation from Project where City in ('cairo' ,'Alex')
+
+--5. Display all project data where the project name starts with the letter 'A'. 
+select * from Project where Pname like 'A%'
+
+--6. Display the IDs and names of employees in department 30 with a salary between 1000 and 2000 LE. 
+select SSN, Fname +' '+Lname As FullName  from Employee 
+where Dno =30
+And Salary between 1000 And 2000
+
+--7. Retrieve the names of employees in department 10 who work ≥ 10 hours/week on the "AL Rabwah" project.
+select E.Fname +' '+E.Lname As FullName from Employee E
+ join Works_for w 
+ on E.SSN=w.ESSn
+ join Project p
+ on w.Pno =P.Pnumber
+where E.Dno =10
+And w.Hours >=10 
+And P.Pname='Al Rabwah'
+
+--8. Find the names of employees who are directly supervised by "Kamel Mohamed". 
+select E.Fname +' '+E.Lname As FullName from Employee E
+Join Employee S
+on E.SSN =S.Superssn
+where E.Fname='Kamel' And E.Lname='Mohamed'
+
+--9. Retrieve the names of employees and the names of the projects they work on, sorted by project name. 
+select E.Fname +' '+E.Lname As EmployeeName ,P.Pname As projectName 
+from Employee E
+join  Works_for w 
+ on E.SSN=w.ESSn
+join Project P 
+on w.Pno=p.Pnumber
+order by P.Pname
+
+--10. For each project located in Cairo, display the project number, controlling department name, manager's last name, address, and birthdate. 
+select P.Pnumber ,D.Dname ,E.Lname ,E.Address,E.Bdate
+from Project P
+join Departments D on P.Dnum=D.Dnum
+join  Works_for w 
+ on w.Pno=p.Pnumber
+Join Employee E on  E.SSN=w.ESSn
+where P.City ='Cairo'
+--11. Display all data of managers in the company. 
+Select Distinct E.*from Employee E
+join Employee S 
+on E.SSN =S.Superssn
+
+--12. Display all employees and their dependents, even if some employees have no dependents.
+select E.Fname +' '+E.Lname As EmployeeName,E.Address,E.Salary,E.Superssn,
+D.Dependent_name ,D.Sex,D.Bdate
+from Employee E 
+left Join Dependent D
+on E.SSN=D.ESSN
