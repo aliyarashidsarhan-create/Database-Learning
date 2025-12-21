@@ -1,0 +1,90 @@
+﻿--1.Display the department ID, name, and the full name of the faculty managing it. 
+select D.Department_id ,D.DName,F.Name As FacultyName
+From Department D
+join Faculty F 
+on D.Department_id=F.Department
+--2. Display each program's name and the name of the department offering it. 
+select C.CName as ProjramName ,
+D.DName as DepartmentName
+From Corses C
+Join Department D on C.DId=D.Department_id
+
+--3. Display the full student data and the full name of their faculty advisor.
+select s.*, f.Name As AdvisorName
+from Student s
+join Faculty f
+on s.F_id=f.F_id
+
+--4. Display class IDs, course titles, and room locations for classes in buildings 'A' or 'B'. 
+select e.Exam_Code ClassID ,e.Room ,c.CName As CourceTitle
+from Exams e
+join Corses c
+on e.DId=c.DId
+where e.Room like 'A%'
+or e.Room like 'B%'
+
+--5. Display full data about courses whose titles start with "I" (e.g., "Introduction to..."). 
+select * from Corses
+where CName like 'I%'
+
+--6. Display names of students in program ID 3 whose GPA is between 2.5 and 3.5. 
+select Fname +' '+Lname As StudentName from Student
+where Department_id =3
+And GPA between 2.5 And 3.5
+
+--7. Retrieve student names in the Engineering program who earned grades ≥ 90 in the "Database" course. 
+select s.Fname +' '+s.Lname As StudentName from Student s
+join Department d
+on s.Department_id=d.Department_id
+join Student_Course sc
+on s.S_Id=sc.S_Id
+join Corses c
+on sc.Course_Id=c.Course_Id
+where d.DName='Engineering'
+And c.CName='Database'
+
+--8. Find names of students who are advised by "Dr. Ahmed Hassan". 
+select s.Fname,s.Lname
+from Student s
+join Faculty f
+on s.F_id=f.F_id
+where f.Name ='Dr. Ahmed Hassan'
+
+--9. Retrieve each student's name and the titles of courses they are enrolled in, ordered by course title. 
+select s.Fname ,s.Lname ,c.CName 
+from Student s
+join Student_Course sc
+on s.S_Id=sc.S_Id
+join corses c
+on sc.Course_Id=c.Course_Id
+order by c.CName 
+
+--10. For each class in Building 'Main', retrieve class ID, course name, department name, and faculty name teaching the class.
+select e.Exam_Code As ClassId,
+c.CName As CourseName,
+d.DName As DepartmentName,
+f.Name As FacultyName
+from Exams e
+join Corses C
+on e.DId=c.DId
+join Department d
+on c.DId=d.Department_id
+join Faculty f
+on d.Department_id=f.Department
+where e.Room='Main'
+--11. Display all faculty members who manage any department. 
+select Distinct f.*
+from Faculty f
+join Department d
+on f.Department=d.Department_id
+--12. Display all students and their advisors' names, even if some students don’t have advisors yet. 
+select s.Fname +' '+s.Lname as StudentName,
+f.Name as advisorName
+from Student s
+left join Faculty f
+on s.F_id=f.F_id
+
+select * from Department
+select * from Corses
+select * from Faculty
+select * from Student_Course
