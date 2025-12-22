@@ -1,0 +1,67 @@
+--1. Display each flight leg's ID, schedule, and the name of the airplane assigned to it. 
+select l.Leg_No,f.Scheduld_DTime ,f.Scheduld_ArTime,A.TName As AirplaneName
+from Leg_instance L 
+join AirePlane A on l.Airplane_id=A.airplane_id
+join Flight_leg f on l.leg_No=f.leg_No
+--2. Display all flight numbers and the names of the departure and arrival airports. 
+select f.Flight_No ,A1.AName As Departure_Airport,
+A2.AName As Arrival_Airport 
+from Flight f 
+join Flight_leg FL1 on f.Flight_No=FL1.flight_No
+join Airport A1 on Fl1.Airport_code=A1.Airport_code
+join Flight_leg FL2 on f.Flight_No=FL2.flight_No
+join Airport A2 on FL2.Airport_code=A2.Airport_code
+
+--3. Display all reservation data with the name and phone of the customer who made each booking. 
+select Reservation_Id,CName As CustomerName ,CPhone As CustomerPhone  ,Seat_No,
+instance_id from Reservation
+
+--4. Display IDs and locations of flights departing from 'CAI' or 'DXB'. 
+select fl.flight_No ,A.city,A.States
+from Flight_leg fl
+join Airport A on fl.Airport_code=A.Airport_code
+where fl.Airport_code in('MCT','DOh')
+
+--5. Display full data of flights whose names start with 'A'. 
+select * from Flight 
+where Airline like'A%'
+
+--6. List customers who have bookings with total payment between 3000 and 5000. 
+select R.CName,sum (f.amount) As TotalPayment
+from Reservation R
+join Leg_instance li on li.instance_id=R.instance_id
+join Flight_leg fl on li.leg_No=fl.leg_No
+join fare f on fl.flight_No=f.flight_no
+Group by R.CName
+having sum(f.amount) between 300 and 500
+
+--7. Retrieve all passengers on 'Flight 110' who booked more than 2 seats. 
+select R.CName ,count(R.Seat_No) As SeetBooked
+from Reservation R
+join Leg_instance li on li.instance_id=R.instance_id
+join Flight_leg f on f.leg_No=li.leg_No
+where f.flight_No='OM101'
+Group by R.CName
+having count(R.Seat_No) >0
+
+--8. Find names of passengers whose booking was handled by agent "Youssef Hamed". 
+select CName from Reservation where CName='Ali Ahmed'
+--9. Display each passenger’s name and the flights they booked, ordered by flight date. 
+select R.CName ,f.flight_No,l.dates
+from Reservation R
+join Leg_instance l on l.instance_id=R.instance_id
+join Flight_leg f on l.leg_No=f.leg_No
+order by l.dates
+
+--10. For each flight departing from 'Cairo', display the flight number, departure time, and airline name. 
+select f.Flight_No ,fl.Scheduld_DTime,f.Airline ,A.City
+from Flight f 
+join Flight_leg fl on f.Flight_No=fl.flight_No
+join Airport A on A.Airport_code=fl.Airport_code
+where A.city='Muscat'
+
+--11. Display all staff members who are assigned as supervisors for flights. 
+--No staff
+--12. Display all bookings and their related passengers, even if some bookings are unpaid.
+select * from Reservation
+
