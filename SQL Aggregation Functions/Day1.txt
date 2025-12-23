@@ -1,0 +1,141 @@
+
+--1. Display all courses with prices. 
+select CourseID,Title,Price
+from Courses 
+
+--2. Display all students with join dates. 
+select StudentID,FullName,JoinDate
+from Students
+
+--3. Show all enrollments with completion percent and rating. 
+select * from Enrollments
+--4. Count instructors who joined in 2023. 
+select COUNT(*) As Instructor
+from Instructors
+where YEAR(joinDate)=2023
+
+--5. Count students who joined in April 2023.
+select COUNT(*) As StudentCount
+from Students 
+where Year(JoinDate)=2023
+And MONTH(JoinDate)=4
+
+--Part 2: Beginner Aggregation 
+--1. Count total number of students. 
+select COUNT('fullName') As TotalStudent
+from Students
+--2. Count total number of enrollments. 
+select count(*) As TotalEnrollment
+from Enrollments
+
+--3. Find average rating per course. 
+select CourseID,AVG(Rating) aS AvRating
+from Enrollments 
+Group by CourseID
+
+--4. Count courses per instructor. 
+select InstructorID,COUNT(*) As CourseCount
+from Courses
+Group By InstructorID
+
+--5. Count courses per category. 
+select CategoryID,count(*) As CountCourse
+from Courses
+Group By CategoryID
+--6. Count students enrolled in each course. 
+select CourseID ,COUNT(StudentID) As StudentCount
+from Enrollments
+Group by CourseID
+
+--7. Find average course price per category. 
+select CategoryID ,AVG(Price) As AvgPrice
+from Courses
+group by CategoryID
+
+--8. Find maximum course price. 
+select MAX(Price) As MaxPrice
+from Courses
+
+--9. Find min, max, and average rating per course.
+select CourseID,
+Min(Price)As MinPrice,
+MAX(Price) As MaxPrice,
+avg(Price)As AvgPrice
+from Courses
+Group by CourseID
+
+--10. Count how many students gave rating = 5.
+select count(*) As Rating5
+from Enrollments
+where Rating =5
+
+--Part 3: Extended Beginner Practice 
+--11. Count enrollments per month. 
+select MONTH(EnrollDate) As EnrollMonth ,count(*) As Enrollment
+from Enrollments
+group by MONTH(EnrollDate)
+
+
+--12. Find average course price overall. 
+select avg(price) As AVGPrice
+from Courses
+
+--13. Count students per join month.
+select MONTH(JoinDate) As JMonth ,count(*) As studentCount
+from Students
+group by MONTH(JoinDate)
+
+--14. Count ratings per value (1–5). 
+select Rating ,COUNT(*) As RatingCount
+from Enrollments
+where Rating in(1,2,3,4,5)
+Group by Rating
+
+--15. Find courses that never received rating = 5. 
+select CourseID,Title
+from Courses
+where CourseID not in(
+select Distinct CourseID
+from Enrollments
+where Rating =5)
+
+--16. Count courses priced above 30. 
+select count(*) As CourceAbove30
+from Courses
+where Price >30
+
+--17. Find average completion percentage. 
+select avg(CompletionPercent) As AvgCompletion
+from Enrollments 
+
+--18. Find course with lowest average rating.
+select C.CourseID ,C.Title,Avg(Rating) As AvgRate
+from Courses c
+join Enrollments e on c.CourseID=e.CourseID
+group by C.CourseID ,C.Title
+order by AvgRate ASC
+
+--What was easiest?siest part was writing simple SELECT queries and basic COUNT queries
+--What was hardest? The hardest part was using GROUP BY correctly ,Handling errors related
+--What does GROUP BY do in your own words? 
+--GROUP BY groups rows that have the same values into summary rows, 
+--allowing us to apply aggregate functions like COUNT or AVG to each group instead of the whole table.--
+
+--Day 1 Mini Challenge 
+--Course Performance Snapshot 
+--Show: 
+--• Course title 
+--• Total enrollments 
+--• Average rating 
+--• Average completion % 
+SELECT 
+    c.Title AS CourseTitle,
+    COUNT(e.EnrollmentID) AS TotalEnrollments,
+    AVG(e.Rating) AS AverageRating,
+    AVG(e.CompletionPercent) AS AverageCompletionPercent
+FROM Courses c
+LEFT JOIN Enrollments e
+    ON c.CourseID = e.CourseID
+GROUP BY c.Title
+ORDER BY c.Title;
+
