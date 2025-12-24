@@ -109,7 +109,7 @@ select avg(CompletionPercent) As AvgCompletion
 from Enrollments 
 
 --18. Find course with lowest average rating.
-select C.CourseID ,C.Title,Avg(Rating) As AvgRate
+select Top 1 C.CourseID ,C.Title,Avg(Rating) As AvgRate
 from Courses c
 join Enrollments e on c.CourseID=e.CourseID
 group by C.CourseID ,C.Title
@@ -139,5 +139,3 @@ LEFT JOIN Enrollments e
 GROUP BY c.Title
 ORDER BY c.Title;
 
-select * from Courses
-select * from Enrollments
