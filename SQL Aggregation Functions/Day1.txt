@@ -85,7 +85,7 @@ select MONTH(JoinDate) As JMonth ,count(*) As studentCount
 from Students
 group by MONTH(JoinDate)
 
---14. Count ratings per value (1–5). 
+--14. Count ratings per value (1 5). 
 select Rating ,COUNT(*) As RatingCount
 from Enrollments
 where Rating in(1,2,3,4,5)
@@ -118,16 +118,16 @@ order by AvgRate ASC
 --What was easiest?siest part was writing simple SELECT queries and basic COUNT queries
 --What was hardest? The hardest part was using GROUP BY correctly ,Handling errors related
 --What does GROUP BY do in your own words? 
---GROUP BY groups rows that have the same values into summary rows, 
---allowing us to apply aggregate functions like COUNT or AVG to each group instead of the whole table.--
+GROUP BY groups rows that have the same values into summary rows, 
+allowing us to apply aggregate functions like COUNT or AVG to each group instead of the whole table.
 
 --Day 1 Mini Challenge 
 --Course Performance Snapshot 
 --Show: 
---• Course title 
---• Total enrollments 
---• Average rating 
---• Average completion % 
+--  Course title 
+--  Total enrollments 
+--  Average rating 
+--  Average completion % 
 SELECT 
     c.Title AS CourseTitle,
     COUNT(e.EnrollmentID) AS TotalEnrollments,
