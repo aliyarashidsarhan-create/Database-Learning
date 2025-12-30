@@ -1,0 +1,95 @@
+--insert in Table Libraries 
+insert into Libraries (LName, LLocation, contactNO, EYear)
+values ('Muscat Library', 'Muscat, Oman', '968-12345678', 1995),
+       ('Salalah Library', 'Salalah, Oman', '968-87654321', 2009),
+      ('Sohar Library', 'Sohar, Oman', '968-23456789', 2015)
+
+--INSERT INTO Staff
+insert into Staff(FullName, position, ContactNo, Libraries_ID)
+VALUES('Ahmed Al-Moqbali', 'Librarian', '968-11122233', 1),
+      ('Fatma Al-Balushi', 'Assistant Librarian', '968-22233344', 1),
+      ('Salim Al-Isaii', 'Librarian', '968-33344455', 2),
+      ('Noura Al-Farsi', 'Assistant Librarian', '968-44455566', 3)
+
+--INSERT INTO Book
+INSERT INTO Book (ISBN, Title, Genre, Price, ShelfLocation, Libraries_ID)
+VALUES
+-- Muscat Library (1)
+('978-001', 'SQL Basics', 'Non-Fiction', 20, 'A1', 1),
+('978-002', 'Advanced SQL', 'Non-Fiction', 30, 'A2', 1),
+('978-003', 'Oman History', 'Non-fiction', 18, 'B1', 1),
+('978-004', 'Database Design', 'Education', 25, 'B2', 1),
+('978-005', 'Web Development', 'Education', 28, 'B3', 1),
+('978-006', 'Python Guide', 'Education', 32, 'C1', 1),
+('978-007', 'Project Management', 'Business', 22, 'C2', 1),
+
+-- Salalah Library (2)
+('978-008', 'Harry Potter', 'Fiction', 30, 'D1', 2),
+('978-009', 'Lord of the Rings', 'Fiction', 35, 'D2', 2),
+('978-010', 'Short Stories', 'Fiction', 15, 'D3', 2),
+('978-011', 'Digital Marketing', 'Business', 26, 'E1', 2),
+('978-012', 'Startup Basics', 'Business', 24, 'E2', 2),
+('978-013', 'AI Introduction', 'Technology', 40, 'E3', 2),
+
+-- Sohar Library (3)
+('978-014', 'Children Tales', 'Children', 12, 'F1', 3),
+('978-015', 'Math for Kids', 'Children', 14, 'F2', 3),
+('978-016', 'Science Basics', 'Education', 20, 'F3', 3),
+('978-017', 'World Geography', 'Education', 22, 'G1', 3),
+('978-018', 'English Grammar', 'Education', 18, 'G2', 3),
+('978-019', 'Arabic Literature', 'Fiction', 27, 'G3', 3),
+('978-020', 'Healthy Living', 'Non-fiction', 21, 'H1', 3);
+
+--INSERT INTO Members
+insert into Members(FullName, Email, phoneNo, MS_StartDate)
+Values('Aliya Rashid', 'aliya@gmail.com', '968-55566677', '2025-01-15'),
+      ('Omar Said', 'omar@gmail.com', '968-66677788', '2025-03-20'),
+      ('Sara Al-Hinai', 'sara@gmail.com','968-66677999', '2025-06-05')
+
+--INSERT INTO Loan
+INSERT INTO Loan (LoanDate, DueDate, ReturnDate, LStatus, Member_Id, Book_Id)
+VALUES
+('2025-06-01','2025-06-15',NULL,'Issued',4,1032),
+('2025-06-02','2025-06-16','2025-06-15','Returned',5,1033),
+('2025-06-03','2025-06-17',NULL,'Overdue',6,1034),
+('2025-06-04','2025-06-18','2025-06-17','Returned',405,1035),
+('2025-06-05','2025-06-19',NULL,'Issued',408,1036),
+('2025-06-06','2025-06-20',NULL,'Issued',409,1037),
+('2025-06-07','2025-06-21','2025-06-20','Returned',410,1038),
+('2025-06-08','2025-06-22',NULL,'Issued',411,1039),
+('2025-06-09','2025-06-23','2025-06-22','Returned',412,1040),
+('2025-06-10','2025-06-24',NULL,'Overdue',413,1041),
+('2025-06-11','2025-06-25','2025-06-24','Returned',414,1042),
+('2025-06-12','2025-06-26',NULL,'Issued',4,1043),
+('2025-06-13','2025-06-27','2025-06-26','Returned',5,1044),
+('2025-06-14','2025-06-28',NULL,'Issued',6,1045),
+('2025-06-15','2025-06-29',NULL,'Issued',6,1046);
+
+--INSERT INTO Payment 
+insert into Payment (payment_Date, Amount, Method, Loan_Id)
+VALUES('2025-12-03', 5.00, 'Cash', 7),
+     ('2025-12-10', 10.00, 'Card', 8)
+
+--INSERT INTO Review
+insert into Review (Rating, Comments, ReviewDate, Book_Id, Member_Id)
+VALUES (5, 'Excellent book!', '2025-12-04', 3, 4),
+       (4, 'Very informative.', '2025-12-05', 5, 5),
+       (3, 'Good for kids.', '2025-12-06', 4, 6)
+
+ INSERT INTO Members(FullName, Email, phoneNo, MS_StartDate)
+VALUES
+
+('Khalid Al-Badi', 'khalid@gmail.com', '968-5550004', '2025-03-20'),
+('Aisha Al-Raisi', 'aisha@gmail.com', '968-5550005', '2025-04-01'),
+('Salem Al-Harthy', 'salem@gmail.com', '968-5550006', '2025-04-12'),
+('Noor Al-Sabti', 'noor@gmail.com', '968-5550007', '2025-05-01'),
+('Hamed Al-Farsi', 'hamed@gmail.com', '968-5550008', '2025-05-10'),
+('Maha Al-Lawati', 'maha@gmail.com', '968-5550009', '2025-06-01'),
+('Yousef Al-Kindi', 'yousef@gmail.com', '968-5550010', '2025-06-15');
+
+
+
+
+
+
+select * from Book
